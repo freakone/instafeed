@@ -1,0 +1,158 @@
+// bower:scss
+// endbower
+
+@font-face {
+  font-family: "Colfax Web";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/ColfaxWebBold.woff") format("woff");
+}
+
+@import 'modules/_fonts';
+
+.trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+html, body, main, #slides {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #2c3e50;
+  font-family: "Colfax Web", sans-serif;
+}
+
+.slide {
+  padding-top: 60px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  // transition: transform 0.4s ease-in-out;
+  z-index: 10;
+  transform: translateY(100%);
+}
+
+h1 {
+  margin: 0;
+  font-size: 15vh;
+  line-height: 100vh;
+  color: white;
+}
+
+h2 {
+  // margin: 2vh 15vh;
+  font-size: 8vh;
+  color: white;
+  line-height: 1;
+}
+
+.container {
+  color: white;
+  display: inline-block;
+  margin: 20vh -33vw;
+  text-align: center;
+}
+
+.hi5 {
+  font-size: 40vh;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+i.big-icon {
+  font-size: 30vh;
+  line-height: 100vh;
+}
+
+i.txt-icon {
+  font-size: 65vh;
+  line-height: 100vh;
+}
+
+$slides: 7;
+
+@for $i from 1 through $slides {
+  .s#{$i} {
+    transform: translateY(100%);
+  }
+
+  input[value="#{$i}"]:checked ~ .s#{$i} {
+    transform: translateY(0)
+  }
+
+  // input[value="#{$i + 1}"]:checked ~ .s#{$i} {
+  //   transform: translateY(-100%)
+  // }
+}
+
+.slide-active {
+  transform: translateY(0)
+}
+
+.s1 {
+  background: rgba(57,79,101,1);
+}
+
+.s2 {
+  background: rgba(241,74,88,1);
+}
+
+.s3 {
+  background: #3CA2E0;
+}
+
+.s4 {
+  background: #EB5643;
+}
+
+.s5 {
+  background: #E88826;
+}
+
+.s6 {
+  background: #A566BE;
+}
+
+.s7 {
+  background: #38D27D;
+}
+
+.insta {
+  height: 100%;
+}
+
+.to-left {
+  float: left;
+  right: auto;
+  width: auto;
+
+  .slide {
+    right: auto;
+    width: auto;
+  }
+}
+
+.to-right {
+  display: inline-block;
+  float: right;
+
+}
+
+// input[value="2"]:checked ~ .s2 {
+//   transform: translateY(0)
+// }
